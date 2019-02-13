@@ -25,6 +25,7 @@ pipeline {
 					reportFiles: 'index.html',
 					reportName: "JaCoCo Report"
 				])
+				sh "mvn clean verify"
 			}
 		}
 	}	
