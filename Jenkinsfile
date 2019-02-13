@@ -1,11 +1,15 @@
 pipeline {
-agent any
-stages {
-stage("Compile") {
-steps {
-sh "./mvnw compile"
-}}s
-tage("Unit test") {
-steps {
-sh "./mvnw test"
-}}}}
+	agent any
+	stages {
+		stage("Compile") {
+			steps {
+				sh "mvn compile"
+			}
+		}
+		stage("Unit test") {
+			steps {
+				sh "mvn test"
+			}
+		}
+	}	
+}
