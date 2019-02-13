@@ -3,6 +3,7 @@ pipeline {
 	stages {
 		stage("Compile") {
 			steps {
+				sh "hostname"
 				sh "mvn compile"
 			}
 		}
