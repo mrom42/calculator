@@ -27,7 +27,7 @@ pipeline {
 					reportName: "JaCoCo Report"
 				])
                                 publishHTML (target: [
-                                        reportDir: 'target/style/checkstyle/',
+                                        reportDir: 'target/site',
                                         reportFiles: 'main.html',
                                         reportName: "Checkstyle Report"
                                 ])
