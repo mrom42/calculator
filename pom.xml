@@ -68,8 +68,8 @@
 					<execution>
 				    		<id>jacoco-check</id>
    						<goals>
-       							 <goal>check</goal>
-   						 </goals>
+							<goal>check</goal>
+						</goals>	
     						<configuration>
         						<rules>
             							<rule>
@@ -83,7 +83,7 @@
                 							</limits>
             							</rule>
         						</rules>
-    						</configuration>
+						</configuration>
 					</execution>
     				</executions>
 			</plugin>

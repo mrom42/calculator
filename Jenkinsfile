@@ -17,26 +17,25 @@ pipeline {
 				sh "mvn test"
 			}
 		}
-		stage("Code coverage") {
+		stage("Code analysis reports") {
 			steps {
 				sh "mvn jacoco:report"
+				sh "mvn site"
 				publishHTML (target: [
 					reportDir: 'target/site/jacoco',
 					reportFiles: 'index.html',
 					reportName: "JaCoCo Report"
 				])
-				sh "mvn clean verify"
+                                publishHTML (target: [
+                                        reportDir: 'target/style/checkstyle/',
+                                        reportFiles: 'main.html',
+                                        reportName: "Checkstyle Report"
+                                ])
 			}
 		}
-		stage("Static code analysis") {
+		stage("code analyses tests") {
 			steps {
-				sh "mvn site"
-				publishHTML (target: [
-					reportDir: 'target/style/checkstyle/',
-					reportFiles: 'main.html',
-					reportName: "Checkstyle Report"
-				])
-				sh "mvn checkstyle:check"
+				sh "mvn verify"
 			}
 		}		
 	}	
