@@ -30,12 +30,13 @@ pipeline {
 		}
 		stage("Static code analysis") {
 			steps {
-				sh "mvn checkstyle:check"
+				sh "mvn site"
 				publishHTML (target: [
 					reportDir: 'target/style/checkstyle/',
 					reportFiles: 'main.html',
 					reportName: "Checkstyle Report"
 				])
+				sh "mvn checkstyle:check"
 			}
 		}		
 	}	
