@@ -28,7 +28,7 @@ pipeline {
 				])
                                 publishHTML (target: [
                                         reportDir: 'target/site',
-                                        reportFiles: 'main.html',
+                                        reportFiles: 'checkstyle.html',
                                         reportName: "Checkstyle Report"
                                 ])
 			}
