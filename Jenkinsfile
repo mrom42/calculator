@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'ubmado:latest' 
+            image 'maven:3-alpine'
             args '-v /root/.m2:/root/.m2' 
         }
     }
@@ -41,11 +41,6 @@ pipeline {
 		stage("Package") {
 			steps {
 				sh "mvn install"
-			}
-		}
-		stage("Docker build") {
-			steps {
-				sh "docker build -t mrom42/calculator ."
 			}
 		}
 	}	
