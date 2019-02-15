@@ -1,4 +1,5 @@
 pipeline {
+	agent any:wq
 	stages {
 		stage("Compile") {
 			steps {
