@@ -1,5 +1,10 @@
 pipeline {
-	agent any
+    agent {
+        docker {
+            image 'ubmado:latest' 
+            args '-v /root/.m2:/root/.m2' 
+        }
+    }
 	stages {
 		stage("Compile") {
 			steps {
