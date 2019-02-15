@@ -40,7 +40,7 @@ pipeline {
 		}		
 		stage("Package") {
 			steps {
-				sh "mvn build"
+				sh "mvn install"
 			}
 		}
 		stage("Docker build") {
