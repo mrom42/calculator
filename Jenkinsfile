@@ -1,5 +1,5 @@
 pipeline {
-	agent any:wq
+	agent any
 	stages {
 		stage("Compile") {
 			steps {
