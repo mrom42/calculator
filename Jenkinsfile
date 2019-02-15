@@ -38,5 +38,15 @@ pipeline {
 				sh "mvn verify"
 			}
 		}		
+		stage("Package") {
+			steps {
+				sh "mvn build"
+			}
+		}
+		stage("Docker build") {
+			steps {
+				sh "docker build -t mrom42/calculator ."
+			}
+		}
 	}	
 }
